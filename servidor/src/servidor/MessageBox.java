@@ -92,30 +92,4 @@ public class MessageBox {
 		this.orderMessages();
 	}
 	
-	public static void main(String[] args) {
-		MessageBox f1= new MessageBox(50);
-		f1.addMessage("10hola wey1");
-		f1.addMessage("20hola wey2");
-		f1.addMessage("03hola wey3");
-		System.out.println(f1.messages[0]);
-		System.out.println(f1.messages[1]);
-		System.out.println(f1.messages[2]);
-		System.out.println(f1.messages[3]);
-		f1.deleteMessage(0);
-		System.out.println(f1.messages[0]);
-		System.out.println(f1.messages[1]);
-		System.out.println(f1.messages[2]);
-		System.out.println(f1.messages[3]);
-		f1.orderMessages();
-		System.out.println(f1.messages[0]);
-		System.out.println(f1.messages[1]);
-		System.out.println(f1.messages[2]);
-		System.out.println(f1.messages[3]);
-		String m1=f1.getMessageById(20);
-		System.out.println(m1);
-		System.out.println(f1.messages[0]);
-		System.out.println(f1.messages[1]);
-		System.out.println(f1.messages[2]);
-		System.out.println(f1.messages[3]);
-	}
 }
