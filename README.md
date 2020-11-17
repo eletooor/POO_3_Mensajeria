@@ -1,6 +1,7 @@
 # POO_3_Mensajeria
 
 Podes abrir varios clientes desde .\cliente\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\netcoreapp3.1\WindowsFormsApp1.exe
+El servidor debe ejecutarse en java
 
 Protocolo--->
 ----------------------------------
