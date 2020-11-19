@@ -25,20 +25,12 @@ public void run (){
 		   
 			   while(true){
 				  
-				   ///
-				   System.out.println(this.messageList.messages[0]);
-				   System.out.println(this.messageList.messages[1]);
-				   
-				   System.out.println(this.messageList.messages[2]);
-				   System.out.println(this.messageList.messages[3]);
-				   ///
+				  
 				   
 				   entrada = new BufferedReader(new InputStreamReader(elCliente.getInputStream()));
 				   System.out.print("\nEsperando\n");
 				   leido=entrada.readLine();
-//				   System.out.println("prueba inicio");
-//				   System.out.println(this.leido);
-//				   System.out.println("prueba fin");
+//	
 				
 				   switch(leido.substring( 0, 2)) {
 				   
@@ -47,8 +39,8 @@ public void run (){
 					   System.out.println(this.leido);
 					   salida.writeBytes("\nReinicie su sesion para seguir chateando\n");
 					   this.clientsList.deleteCliente(myId);
-			//		   elCliente.close();
-		//			  Thread.currentThread().stop();				   
+					   elCliente.close();
+					  Thread.currentThread().stop();				   
 					   break;
 					   
 				   case "01":	//Enviar Mensaje

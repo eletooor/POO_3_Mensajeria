@@ -20,19 +20,8 @@ public class Index {
     while (true){
     	Socket cliente=null;
     	
-//    	cliOnLine.cleanClient();
+    	cliOnLine.cleanClient();
     	cliOnLine.orderClientes();
-    	
-    	//
-    		for(int i=0; i<cliOnLine.getClientes().length; i++) {
-    			System.out.println(cliOnLine.getClientes()[i]);
-    		}
-    	//
-    		//
-    		for(int i=0; i<cliOnLine.getIdCli().length; i++) {
-    			System.out.println(cliOnLine.getIdCli()[i]);
-    		}
-    	//
     	
     	if(cliOnLine.isLleno()) {
     		System.out.println("\nNo hay vacantes disponibles");

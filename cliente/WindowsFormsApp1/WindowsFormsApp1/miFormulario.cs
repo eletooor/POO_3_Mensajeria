@@ -32,17 +32,24 @@ namespace WindowsFormsApp1
         //recibe lista de usuarios
         private void button1_Click(object sender, EventArgs e)
         {
-          
-            this.clase = new Class1(Singleton.obtenerHost(), Singleton.obtenerPuerto());
-            this.pdm=new Class2();
-            this.label2.Text = "Conectado..." ;
-            this.id = this.clase.Recibir();
-            this.textBox1.Text = "Su ID es: " + this.id;
-            button_iniciar.Enabled = false;
-            button_salir.Enabled = true;
-            timer1.Enabled = true;
-            timer2.Enabled = true;
-            timer3.Enabled = true;
+            try
+            {
+                this.clase = new Class1(Singleton.obtenerHost(), Singleton.obtenerPuerto());
+                this.pdm = new Class2();
+                this.label2.Text = "Conectado...";
+                this.id = this.clase.Recibir();
+                this.textBox1.Text = "Su ID es: " + this.id;
+                button_iniciar.Enabled = false;
+                button_salir.Enabled = true;
+                timer1.Enabled = true;
+                timer2.Enabled = true;
+                timer3.Enabled = true;
+            }
+            catch (Exception)
+            {
+                this.label2.Text = "No se ha podido conectar...";
+            }
+           
         }
 
         
@@ -77,14 +84,24 @@ namespace WindowsFormsApp1
         //activa y desactiva botones y timers
         private void button2_Click_1(object sender, EventArgs e)
         {
-            this.offRAdioButton();
-            this.clase.Enviar("00");
+            try
+            {
+                this.offRAdioButton();
+                this.clase.Enviar("00");
                 this.textBox1.Text = "sesion expirada";
                 this.label2.Text = this.clase.Recibir();
-            button_iniciar.Enabled = true;
-            button_enviar.Enabled = false;
-            button_salir.Enabled = false;
-            timer1.Enabled = false;
+                button_iniciar.Enabled = true;
+                button_enviar.Enabled = false;
+                button_salir.Enabled = false;
+                timer1.Enabled = false;
+                timer2.Enabled = false;
+                timer3.Enabled = false;
+
+            }
+            catch (Exception)
+            {
+                this.label2.Text = "Error de desconexion...";
+            }
            
             
 
@@ -328,8 +345,16 @@ namespace WindowsFormsApp1
         //TIMER CONTROLA BASE DE DATOS DE MENSAJES
         private void timer2_Tick(object sender, EventArgs e)
         {
-            String mensajes = this.getMessages();
-            this.pdm.enviar(mensajes);
+            try
+            {
+                String mensajes = this.getMessages();
+                this.pdm.enviar(mensajes);
+            }
+            catch (Exception)
+            {
+                this.label5.Text = "Error de comunicación...";
+            }
+           
         }
 
         //TIMER CONTROLA MENSAJE VISUALIZADO
